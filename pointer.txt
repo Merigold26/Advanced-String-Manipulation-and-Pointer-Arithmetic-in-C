@@ -1,0 +1,71 @@
+#include <iostream>
+#include <stdlib.h>
+
+// poniter örneği gibimsi
+
+int main()
+{
+int x=5;
+int *ptr = &x; // pointerı x in adresini eşitle
+
+printf("\n%d",x);// x in değerini yazar
+printf("\n%d",*ptr);// ponterın değerini yazar
+printf("\n%p",&x);// x in adresini yazar
+printf("\n%p",ptr);//pointerın olduğu adresi yazar x olduğu için x inkini yazdırır
+printf("\n%p",&ptr);//ponterın adresini yazar
+
+
+// pointerları yazdımak için %p kullanırız
+
+// pointer dizinin ilk elemanına point eder yani sıfırıncı elemanına
+
+int t = 7;
+int * ptr1;
+int * *ptr2;
+
+ptr1 = &t;
+ptr2=&ptr1;
+
+printf("%d\n",*ptr1);
+printf("%d\n",**ptr2);
+printf("%p\n",ptr1);
+printf("%p\n",ptr2);
+printf("%p\n",&ptr2);
+
+int a = 6;
+int *ptr3 = &a;
+
+printf("%p\n",ptr3);
+printf("%d\n",*ptr3);
+printf("%p\n",&a);
+
+// bir bir arttırışımızda mesela ptr++ gibi 4 byte arttırırız 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+//008f5838 008f583c sayısının son harfi 4 harf atlar 8 den c olur
+
+char deneme[6]="abcd";
+char *ptr6 = deneme;
+ptr6+=1;//1 yazarsak b yi yapar x 0 yazar-sak a yı
+*ptr6='x';
+printf("%s\n",deneme);
+
+// (*ptr)++ işaret edilen yerin içeriği 1 artar-----*ptr++ önce işaret edilen yerin içeriği verilir sonra işaretçi 4 byte artar----*++ptr önce içaretçi 4 byte artar sonra işaret edilen yeni yerin içeriği verilir-----(*++ptr)++ önce işaretçi 4 byte artar sonra işaret edilen yeni yerin içeriği 1 artar
+
+int diziler[5]={1,2,3,4,5};
+int *ptrx=diziler;//pointer şuan sıfırda
+*ptrx=30;
+(*ptrx)++;
+*ptrx++;
+*ptrx=20;
+(*ptrx)--;
+
+
+
+for (int i=0;i<5;i++){
+	printf("%d %p \n",diziler[i],&diziler);
+}
+
+
+
+
+
+}
